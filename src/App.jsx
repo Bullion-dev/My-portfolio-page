@@ -1,15 +1,15 @@
 import './App.css'
-import Homepage from './Pages/Homepage'
+import Hero from './Components/Hero'
 
 function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen ">
-      <Homepage />
+    <main className="mx-auto max-w-6xl p-4">
+      <Hero />
       
-    </div>
+    </main>
   )
 }
 
 
 
-export default App
+export default App;
