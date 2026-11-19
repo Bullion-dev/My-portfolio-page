@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ProjectItem({ title, summary }) {
+function ProjectItem({ title, summary, tags = [] }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -24,7 +24,36 @@ function ProjectItem({ title, summary }) {
         </button>
       </h3>
 
-      {isOpen && <p className="mt-3 max-w-prose text-muted sm:text-xl">{summary}</p>}
+      {isOpen && (
+        <div className="grid gap-8 pb-8 md:grid-cols-2">
+          <div
+            aria-hidden="true"
+            className="grid min-h-48 place-items-center rounded-2xl border border-line bg-surface"
+          >
+            <span className="font-display text-9xl font-black leading-none text-transparent [-webkit-text-stroke:2px_var(--color-accent)]">
+              {title.trim().charAt(0)}
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-5">
+            {summary && (
+              <p className="max-w-prose text-lg text-muted sm:text-xl">
+                {summary}
+              </p>
+            )}
+            <ul className="flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <li
+                  key={tag}
+                  className="rounded-full border border-line px-3 py-1 font-mono text-xs"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </article>
   );
 }
