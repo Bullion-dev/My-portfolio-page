@@ -29,13 +29,16 @@ return(
 
         <div className="flex justify-between font-display font-black text-6xl sm:text-9xl leading-none text-accent mb-12">
             <span>{hours}</span>
+            <p className="text-center font-body text-xs font-normal uppercase tracking-widest leading-relaxed text-muted">
+              Local Time
+              </p>
                 <span>{minutes}</span>
         </div>
 
 
 <div className="max-w-xl">
   <p className="text-sm uppercase tracking-widest text-muted">
-    Front-End Developer · React · SilverStripe
+    Front-End Developer · React · SilverStripe <br /> UI/UX Designer
   </p>
   <h1 className="mt-4 font-display text-4xl sm:text-6xl font-bold">
     Samuel Tsigbey
@@ -45,6 +48,13 @@ return(
   </p>
 </div>
 
+
+    <div className="flex flex-wrap gap-3 mt-6">
+      <a href="#projects" className="transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent hover:bg-fg rounded-2xl bg-accent px-5 py-3 font-semibold text-bg">
+        View my projects </a>
+      <a href="#projects" className="transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent hover:border-accent hover:bg-fg hover:text-accent rounded-2xl bg-accent px-5 py-3 font-semibold text-fg">
+        About Me </a>
+    </div>
 
              {/*
     Hollow text: solid text has two parts you can control separately,
@@ -58,6 +68,7 @@ return(
             <span>{month}</span>
                 <span>{day}</span>
         </div>
+
 </section>
 );
 
